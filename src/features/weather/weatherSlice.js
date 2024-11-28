@@ -1,8 +1,15 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getWeatherToday } from "../../api/weatherApi";
+import { getWeatherToday, getWeather5days } from "../../api/weatherApi";
 
-export const fetchWeatherToday = createAsyncThunk('weather/fetchWeathers', async()=>{
+//오늘 인천날씨
+export const fetchWeatherToday = createAsyncThunk('weather/fetchWeatherToday', async()=>{
     const response = await getWeatherToday();
+    return response.data
+})
+
+//5일 예보
+export const fetchWeather5days = createAsyncThunk('weather/fetchWeather5days', async()=>{
+    const response = await getWeather5days();
     return response.data
 })
 
@@ -11,7 +18,8 @@ const weatherSlice = createSlice({
     initialState:{
         loading:false,
         error:null,
-        weatherToday:[], // 오늘 날씨
+        weatherToday:null, // 오늘 날씨 객체기때문에 null값
+        weather5days:null,
     },
     reducers:{},
     extraReducers:(builder)=>{
@@ -25,6 +33,18 @@ const weatherSlice = createSlice({
                 state.weatherToday=action.payload
             })
             .addCase(fetchWeatherToday.rejected,(state,action)=>{
+                state.loading=false
+                state.error=action.error.message
+            })
+            .addCase(fetchWeather5days.pending,(state)=>{
+                state.loading=true
+                state.error=null
+            })
+            .addCase(fetchWeather5days.fulfilled,(state,action)=>{
+                state.loading=false
+                state.weather5days=action.payload
+            })
+            .addCase(fetchWeather5days.rejected,(state,action)=>{
                 state.loading=false
                 state.error=action.error.message
             })

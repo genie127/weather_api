@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const BASE_URL = 'https://api.openweathermap.org/data/2.5'
 const AUTH_KEY = '74bb17c9eed4e97a719b47bd3d98e0f3'
-///weather?q=Incheon&appid=74bb17c9eed4e97a719b47bd3d98e0f3
+//weather?q=Incheon&appid=74bb17c9eed4e97a719b47bd3d98e0f3
 
 const weatherApi = axios.create({
    baseURL: BASE_URL,
@@ -17,8 +17,25 @@ export const getWeatherToday = async()=>{
       params:{
          q:'Incheon',
          appid:AUTH_KEY,
-         units:'metric'
+         units:'metric',
+         lang:'kr'
       }
    })
+   return response;
+}
+
+//5일 예보 가져오기
+
+//forecast?q=Incheon&appid=74bb17c9eed4e97a719b47bd3d98e0f3
+
+export const getWeather5days = async()=>{
+   const response = await weatherApi.get('/forecast',{
+      params:{
+         q:'Incheon',
+         appid:AUTH_KEY,
+         units:'metric',
+         lang:'kr'
+      }
+   }) 
    return response;
 }
