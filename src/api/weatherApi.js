@@ -24,6 +24,20 @@ export const getWeatherToday = async()=>{
    return response;
 }
 
+//도시 검색하기
+export const getWeatherCity = async(searchCity)=>{
+   const response = await weatherApi.get('/weather',{
+      params:{
+         q:searchCity,
+         appid:AUTH_KEY,
+         units:'metric',
+         lang:'kr'
+
+      }
+   })
+   return response
+}
+
 //5일 예보 가져오기
 
 //forecast?q=Incheon&appid=74bb17c9eed4e97a719b47bd3d98e0f3
@@ -32,6 +46,22 @@ export const getWeather5days = async()=>{
    const response = await weatherApi.get('/forecast',{
       params:{
          q:'Incheon',
+         appid:AUTH_KEY,
+         units:'metric',
+         lang:'kr'
+      }
+   }) 
+   return response;
+}
+
+//5일 예보 검색
+
+//forecast?q=Incheon&appid=74bb17c9eed4e97a719b47bd3d98e0f3
+
+export const getWeatherCity5days = async(searchCity)=>{
+   const response = await weatherApi.get('/forecast',{
+      params:{
+         q:searchCity,
          appid:AUTH_KEY,
          units:'metric',
          lang:'kr'

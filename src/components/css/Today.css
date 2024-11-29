@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'S-CoreDream-5Medium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.dailyWeather{text-align: center;}
+.dailyWeather h3{color:#fff; font-size:18px; font-family: 'S-CoreDream-5Medium'}
+.dailyWeather .temp{display: flex; justify-content: center; align-items: center;}
+.dailyWeather .temp img{}
+.dailyWeather .temp p{color:#fff; font-size:42px; font-family: 'S-CoreDream-6Bold', sans-serif;}
+.dailyWeather .desc{ color:#fff; font-size:20px; font-family: 'S-CoreDream-5Medium', sans-serif;}
+.dailyWeather .humi{color:rgba(255,255,255,.8); font-size:18px; margin-top: 24px;}

@@ -1,7 +1,12 @@
+import './css/Footer.css'
+import { Container } from "../styles/styledComponents";
+
 const Footer=()=>{
     return(
         <footer>
-            <p>&copy; genie127 copyrights reserved</p>
+            <Container>
+                <p>&copy; copyrights genie127 All rights reserved</p>
+            </Container>
         </footer>
     )
 }

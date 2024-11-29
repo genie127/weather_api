@@ -1,3 +1,4 @@
+import './styles/common.css'
 import { Route, Routes } from "react-router-dom"; 
 import Main from "./pages/Main";
 import NotFound from "./pages/NotFound";
@@ -8,7 +9,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Main/>}></Route>
-        <Route path="/search/:cityname" element={<SearchResult/>}></Route>
+        <Route path="/search" element={<SearchResult/>}></Route>
         <Route path="/forecast" element={<Forecast/>}></Route>
         <Route path="/*" element={<NotFound/>}></Route>
       </Routes>

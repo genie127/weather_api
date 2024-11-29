@@ -1,0 +1,9 @@
+.Header{position: fixed; top: 0; left: 0; right: 0;} 
+header > div{display: flex; justify-content: space-between; height: 60px; align-items: center;}
+
+.logo{color:#fff;}
+.gnb{display: flex; }
+.gnb li{}
+.gnb li a{color:#fff; font-size:16px;}
+.gnb li:hover a{color:#113c79}
+.gnb li + li{margin-left: 20px;}
