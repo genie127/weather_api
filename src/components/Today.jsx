@@ -15,7 +15,7 @@ const Today =({weatherToday})=>{
                             <p>{Math.floor(weatherToday.main.temp)} &deg;</p>
                         </div>
                         <p className='desc'>{weatherToday.weather[0].description}</p>
-                        <p className='humi'>강수량: {weatherToday.main.humidity} %</p>
+                        <p className='humi'>습도: {weatherToday.main.humidity} %</p>
                     </div>
                 
             )}

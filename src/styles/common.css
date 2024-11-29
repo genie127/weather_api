@@ -62,9 +62,9 @@ a{text-decoration: none; color:initial}
 *{box-sizing: border-box; }
 .App{
     background: url(../../public/images/5177354.jpg) no-repeat center center /cover;
-    min-height: 100vh; height:auto; position: relative; z-index: 1;
+   position: relative; z-index: 1;
 }
-.App main{padding: 120px 0;}
+.App main{padding: 120px 0;  min-height: calc(100vh - 36px); height:auto; }
 .App:after{content:''; position: absolute; top: 0; bottom: 0; right: 0;left: 0; background: linear-gradient(45deg, #6ab5ea 60%, #feefdc); opacity:.7; z-index: -1;}
 .App *{
 	font-family:'S-CoreDream-3Light', sans-serif;
