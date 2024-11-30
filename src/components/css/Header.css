@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Oleo+Script:wght@400;700&display=swap');
+
 .Header{position: fixed; top: 0; left: 0; right: 0;} 
 header > div{display: flex; justify-content: space-between; height: 60px; align-items: center;}
 
-.logo{color:#fff;}
+header .logo a{color:#fff; font-family: 'Oleo Script', system-ui; font-size:24px}
 .gnb{display: flex; }
 .gnb li{}
 .gnb li a{color:#fff; font-size:16px;}

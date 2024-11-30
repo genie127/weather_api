@@ -7,3 +7,6 @@ export const Container = styled.div`
     margin:0 auto;
 
 `
+export const Btn = styled.div`
+    width:45px; height:45px; display:flex; justify-content:center; align-items:center; border:1px solid #fff; border-radius:50%; color:#fff; cursor:pointer;
+`

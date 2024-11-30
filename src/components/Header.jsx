@@ -7,11 +7,11 @@ const Header =()=>{
         <div className="Header">
             <header>
                 <Container>
-                <h1 className="logo"><Link to="/">날씨</Link></h1>
+                <h1 className="logo"><Link to="/">Where Weather</Link></h1>
                 <nav>
                     <ul className="gnb">
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/forecast">Forecast</Link></li>
+                        <li><Link to="/">지역별 날씨</Link></li>
+                        
                     </ul>
                 </nav>
                 </Container>

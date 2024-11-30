@@ -11,10 +11,23 @@
     font-style: normal;
 }
 
-.dailyWeather{text-align: center;}
+.Today{text-align: center;}
+.dailyWeather{text-align: center; position: relative; display: inline-block;}
 .dailyWeather h3{color:#fff; font-size:18px; font-family: 'S-CoreDream-5Medium'}
 .dailyWeather .temp{display: flex; justify-content: center; align-items: center;}
 .dailyWeather .temp img{}
 .dailyWeather .temp p{color:#fff; font-size:42px; font-family: 'S-CoreDream-6Bold', sans-serif;}
 .dailyWeather .desc{ color:#fff; font-size:20px; font-family: 'S-CoreDream-5Medium', sans-serif;}
 .dailyWeather .humi{color:rgba(255,255,255,.8); font-size:18px; margin-top: 24px;}
+
+.btnArea{display: flex; justify-content: center; margin-top: 20px;}
+.btnArea div{margin: 0 10px;}
+
+
+.detail{margin-top: 15px;  display: flex; flex-wrap:wrap; justify-content: center; width: 70%; justify-self: center;}
+.detail li{color:#fff; font-size:14px; width: 50%;text-align: left; line-height: 2;}
+
+@media (max-width:576px) {
+    .dailyWeather .temp img{width: 80%;}
+    .dailyWeather .temp p{font-size:28px}
+}

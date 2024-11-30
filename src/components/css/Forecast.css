@@ -1,0 +1,11 @@
+.weatherSlider{}
+.weatherSlider .date{font-size:14px;}
+.weatherSlider img{max-width:100%}
+.weatherSlider .desc{font-size:18px; font-weight:600; line-height: 1.4}
+.weatherSlider .temp{margin-top: 15px; font-size:14px}
+
+@media(max-width:420px) {
+    .weatherSlider .date{font-size:12px;}
+    .weatherSlider .desc{font-size:14px;}
+    .weatherSlider .temp{font-size:12px}
+}

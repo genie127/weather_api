@@ -1,13 +1,10 @@
 import './css/Today.css'
 import CheckroomIcon from '@mui/icons-material/Checkroom';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import Popup from './Popup';
 import {useState} from 'react'
-import { useNavigate } from 'react-router-dom';
 import { Btn } from '../styles/styledComponents';
 
-const Today =({weatherToday})=>{
-    const nav = useNavigate();
+const TodayDetail =({weatherToday})=>{
     const [open, setOpen] = useState(false)
     const openPopup=()=>{
         setOpen(true)
@@ -15,9 +12,6 @@ const Today =({weatherToday})=>{
     const closePopup=()=>{
         setOpen(false)
         
-    }
-    const goDetail=()=>{
-        nav(`/detail/${weatherToday.name}`)
     }
     return(
         <div className="Today">
@@ -32,12 +26,18 @@ const Today =({weatherToday})=>{
                         <p className='desc'>{weatherToday.weather[0].description}</p>
                         <div className="btnArea">
                             <Btn  onClick={openPopup}><CheckroomIcon/></Btn>
-                            <Btn  onClick={goDetail}><MoreHorizIcon/></Btn>
                         </div>
+                        
                         {open && (
                             <Popup temp={weatherToday.main.temp} closeBtn={closePopup}/>
                         )}
-                        
+
+                        <ul className="detail">
+                            <li>체감기온: {Math.floor(weatherToday.main.feels_like)}&deg;</li>
+                            <li>습도: {weatherToday.main.humidity}%</li>
+                            {weatherToday.rain?(<li>강수량: {weatherToday.rain['1h']}</li>):''}
+                            <li>풍속: {weatherToday.wind.speed}m/s</li>
+                        </ul>
                     </div>
                 
             )}
@@ -46,4 +46,4 @@ const Today =({weatherToday})=>{
     )
 }
 
-export default Today;
+export default TodayDetail;

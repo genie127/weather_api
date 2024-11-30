@@ -1,3 +1,7 @@
 .searchForm{text-align: center; background: rgba(255,255,255,.5); display: flex; justify-content: center; align-items: center; border-radius:5px; width: 80%; margin: 0 auto 40px;}
-.searchForm input{border:none; width: 90%; padding: 10px 15px; font-size:18px; background: none;}
-.searchForm button{background: none; border:none; padding: 0; color:#0069d2; width: 10%; text-align: center;}
+.searchForm input{border:none; width: calc(100% - 32px); padding: 10px 15px; font-size:18px; background: none;}
+.searchForm button{background: none; border:none; padding: 0px 5px; color:#0069d2; width: 42px; text-align: center;}
+
+@media (max-width:576px) {
+    .searchForm input{font-size:14px}
+}

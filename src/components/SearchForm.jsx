@@ -1,7 +1,7 @@
 import './css/SearchForm.css';
 import { useCallback, useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // 도시 명 검색
 
@@ -9,10 +9,10 @@ import { Navigate, useNavigate } from 'react-router-dom';
 const SearchForm =()=>{
     const nav = useNavigate();
 
-    const [searchCity, setSearchCity] = useState();
+    const [searchCity, setSearchCity] = useState('');
     const changeCityname =useCallback((e)=>{
         setSearchCity(e.target.value)
-    })
+    },[])
     const search=useCallback((e)=>{
         e.preventDefault()
         if(searchCity ==null){
@@ -21,7 +21,7 @@ const SearchForm =()=>{
             nav(`/search?query=${searchCity}`)
         }
 
-    })
+    },[searchCity, nav])
     return(
         <form action="get" className="searchForm" onSubmit={search}>
             <input type="text"  placeholder="Search City name" onChange={changeCityname} value={searchCity}/>
