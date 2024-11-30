@@ -17,7 +17,7 @@ const Detail=()=>{
     const{ weatherCity, loading, error} = useSelector((state)=>state.weather)
     useEffect(()=>{
         if(query){
-            dispatch(fetchWeatherCity({query}))
+            dispatch(fetchWeatherCity(query))
         }
     },[dispatch, query])
 

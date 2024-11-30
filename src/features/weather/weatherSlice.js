@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getWeatherToday, getWeather5days, getWeatherCity, getWeatherCity5days, getWeatherTodayDetail } from "../../api/weatherApi";
+import { getWeatherToday, getWeather5days, getWeatherCity, getWeatherCity5days } from "../../api/weatherApi";
 
 
 //오늘 인천날씨

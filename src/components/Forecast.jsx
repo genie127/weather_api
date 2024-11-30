@@ -9,7 +9,6 @@ import 'swiper/css';
 import 'swiper/css/scrollbar';
 
 import Card from '@mui/material/Card';
-import Typography from '@mui/material/Typography';
 
 const Forecast =({weather5days})=>{
    
